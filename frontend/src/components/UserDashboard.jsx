@@ -23,6 +23,7 @@ function UserDashboard() {
 
 const handleFilterByCategory=(category)=>{
 if(category=="All"){
+  
   setUpdatedItemsList(itemsInMyCity)
 }else{
   const filteredList=itemsInMyCity?.filter(i=>i.category===category)
@@ -77,6 +78,7 @@ setRightButton(element.scrollLeft+element.clientWidth<element.scrollWidth)
       })}
 
   },[categories])
+  
 
 
   return (

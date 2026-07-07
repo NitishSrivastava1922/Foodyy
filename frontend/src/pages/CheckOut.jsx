@@ -14,6 +14,10 @@ import { FaMobileScreenButton } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
 import { serverUrl } from '../App';
 import { addMyOrder, setTotalAmount } from '../redux/userSlice';
+import { loadStripe } from "@stripe/stripe-js";
+const stripePromise = loadStripe(
+  import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY
+);
 function RecenterMap({ location }) {
   if (location.lat && location.lon) {
     const map = useMap()
@@ -90,9 +94,15 @@ function CheckOut() {
       dispatch(addMyOrder(result.data))
       navigate("/order-placed")
       }else{
-        const orderId=result.data.orderId
-        const razorOrder=result.data.razorOrder
-          openRazorpayWindow(orderId,razorOrder)
+       const stripe=await stripePromise;
+
+    const {error}=await stripe.redirectToCheckout({
+        sessionId:result.data.sessionId
+    });
+
+    if(error){
+        console.log(error);
+    }
        }
     
     } catch (error) {
@@ -100,34 +110,7 @@ function CheckOut() {
     }
   }
 
-const openRazorpayWindow=(orderId,razorOrder)=>{
 
-  const options={
- key:import.meta.env.VITE_RAZORPAY_KEY_ID,
- amount:razorOrder.amount,
- currency:'INR',
- name:"Vingo",
- description:"Food Delivery Website",
- order_id:razorOrder.id,
- handler:async function (response) {
-  try {
-    const result=await axios.post(`${serverUrl}/api/order/verify-payment`,{
-      razorpay_payment_id:response.razorpay_payment_id,
-      orderId
-    },{withCredentials:true})
-        dispatch(addMyOrder(result.data))
-      navigate("/order-placed")
-  } catch (error) {
-    console.log(error)
-  }
- }
-  }
-
-  const rzp=new window.Razorpay(options)
-  rzp.open()
-
-
-}
 
 
   useEffect(() => {

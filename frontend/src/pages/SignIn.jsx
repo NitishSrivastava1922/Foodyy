@@ -40,12 +40,15 @@ function SignIn() {
      const handleGoogleAuth=async () => {
              const provider=new GoogleAuthProvider()
              const result=await signInWithPopup(auth,provider)
+            
        try {
          const {data}=await axios.post(`${serverUrl}/api/auth/google-auth`,{
              email:result.user.email,
          },{withCredentials:true})
+      
          dispatch(setUserData(data))
        } catch (error) {
+          
          console.log(error)
        }
           }

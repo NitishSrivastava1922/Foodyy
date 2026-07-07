@@ -4,13 +4,12 @@ import Shop from "../models/shop.model.js"
 import User from "../models/user.model.js"
 import { sendDeliveryOtpMail } from "../utils/mail.js"
 import RazorPay from "razorpay"
+import Stripe from "stripe";
 import dotenv from "dotenv"
+import { count } from "console"
 
 dotenv.config()
-let instance = new RazorPay({
-    key_id: process.env.RAZORPAY_KEY_ID,
-    key_secret: process.env.RAZORPAY_KEY_SECRET,
-});
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export const placeOrder = async (req, res) => {
     try {
@@ -54,26 +53,39 @@ export const placeOrder = async (req, res) => {
         ))
 
         if (paymentMethod == "online") {
-            const razorOrder = await instance.orders.create({
-                amount: Math.round(totalAmount * 100),
-                currency: 'INR',
-                receipt: `receipt_${Date.now()}`
-            })
+          const session = await stripe.checkout.sessions.create({
+    payment_method_types: ["card"],
+    mode: "payment",
+    line_items: [
+        {
+            price_data: {
+                currency: "inr",
+                product_data: {
+                    name: "Food Order",
+                },
+                unit_amount: Math.round(totalAmount * 100),
+            },
+            quantity: 1,
+        },
+    ],
+    success_url: "http://localhost:5173/order-placed",
+    cancel_url: "http://localhost:5173/checkout",
+});
+
             const newOrder = await Order.create({
                 user: req.userId,
                 paymentMethod,
                 deliveryAddress,
                 totalAmount,
                 shopOrders,
-                razorpayOrderId: razorOrder.id,
-                payment: false
+                 stripeSessionId: session.id,
+payment: false,
             })
 
-            return res.status(200).json({
-                razorOrder,
-                orderId: newOrder._id,
-            })
-
+          return res.status(200).json({
+    sessionId: session.id,
+    orderId: newOrder._id,
+});
         }
 
         const newOrder = await Order.create({
@@ -118,9 +130,10 @@ export const placeOrder = async (req, res) => {
 
 export const verifyPayment = async (req, res) => {
     try {
-        const { razorpay_payment_id, orderId } = req.body
-        const payment = await instance.payments.fetch(razorpay_payment_id)
-        if (!payment || payment.status != "captured") {
+        const { paymentIntentId, orderId } = req.body;
+
+        const payment = await stripe.paymentIntents.retrieve(paymentIntentId);
+        if (!payment || payment.status !== "succeeded")  {
             return res.status(400).json({ message: "payment not captured" })
         }
         const order = await Order.findById(orderId)
@@ -129,7 +142,7 @@ export const verifyPayment = async (req, res) => {
         }
 
         order.payment = true
-        order.razorpayPaymentId = razorpay_payment_id
+        order.stripePaymentIntentId = paymentIntentId;
         await order.save()
 
         await order.populate("shopOrders.shopOrderItems.item", "name image price")
@@ -532,7 +545,53 @@ export const verifyDeliveryOtp = async (req, res) => {
     }
 }
 
+export const getTodayDeliveries=async (req,res) => {
+    try {
+        const deliveryBoyId=req.userId
+        const startsOfDay=new Date()
+        startsOfDay.setHours(0,0,0,0)
 
+        const orders=await Order.find({
+           "shopOrders.assignedDeliveryBoy":deliveryBoyId,
+           "shopOrders.status":"delivered",
+           "shopOrders.deliveredAt":{$gte:startsOfDay}
+        }).lean()
+
+     let todaysDeliveries=[] 
+     
+     orders.forEach(order=>{
+        order.shopOrders.forEach(shopOrder=>{
+            if(shopOrder.assignedDeliveryBoy==deliveryBoyId &&
+                shopOrder.status=="delivered" &&
+                shopOrder.deliveredAt &&
+                shopOrder.deliveredAt>=startsOfDay
+            ){
+                todaysDeliveries.push(shopOrder)
+            }
+        })
+     })
+
+let stats={}
+
+todaysDeliveries.forEach(shopOrder=>{
+    const hour=new Date(shopOrder.deliveredAt).getHours()
+    stats[hour]=(stats[hour] || 0) + 1
+})
+
+let formattedStats=Object.keys(stats).map(hour=>({
+ hour:parseInt(hour),
+ count:stats[hour]   
+}))
+
+formattedStats.sort((a,b)=>a.hour-b.hour)
+
+return res.status(200).json(formattedStats)
+  
+
+    } catch (error) {
+        return res.status(500).json({ message: `today deliveries error ${error}` }) 
+    }
+}
 
 
 

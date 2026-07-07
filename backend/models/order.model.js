@@ -75,14 +75,10 @@ const orderSchema = new mongoose.Schema({
         type:Boolean,
         default:false
     },
-    razorpayOrderId:{
-        type:String,
-        default:""
-    },
-   razorpayPaymentId:{
-    type:String,
-       default:""
-   }
+    stripePaymentIntentId: {
+    type: String,
+    default: ""
+}
 }, { timestamps: true })
 
 const Order=mongoose.model("Order",orderSchema)

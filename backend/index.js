@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser"
 import authRouter from "./routes/auth.routes.js"
 import cors from "cors"
 import userRouter from "./routes/user.routes.js"
+import chatRoute from "./routes/chat.routes.js";
 
 import itemRouter from "./routes/item.routes.js"
 import shopRouter from "./routes/shop.routes.js"
@@ -41,6 +42,7 @@ app.use("/api/user",userRouter)
 app.use("/api/shop",shopRouter)
 app.use("/api/item",itemRouter)
 app.use("/api/order",orderRouter)
+
 
 socketHandler(io)
 server.listen(port,()=>{
