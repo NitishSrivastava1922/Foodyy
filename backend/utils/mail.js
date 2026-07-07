@@ -21,11 +21,27 @@ export const sendOtpMail=async (to,otp) => {
 }
 
 
-export const sendDeliveryOtpMail=async (user,otp) => {
-    await transporter.sendMail({
-        from:process.env.EMAIL,
-        to:user.email,
-        subject:"Delivery OTP",
-        html:`<p>Your OTP for delivery is <b>${otp}</b>. It expires in 5 minutes.</p>`
-    })
+export const sendDeliveryOtpMail = async (user, otp) => {
+    try {
+
+        console.log("Sending mail to:", user.email);
+
+        const info = await transporter.sendMail({
+            from: process.env.EMAIL,
+            to: user.email,
+            subject: "Delivery OTP",
+            html: `<p>Your OTP for delivery is <b>${otp}</b>. It expires in 5 minutes.</p>`
+        });
+
+        console.log("Mail Sent Successfully");
+        console.log(info);
+
+    } catch (err) {
+
+        console.error("MAIL ERROR =====================");
+        console.error(err);
+        console.error("===============================");
+
+        throw err;
+    }
 }
