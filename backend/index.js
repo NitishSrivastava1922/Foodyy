@@ -20,7 +20,7 @@ const server=http.createServer(app)
 
 const io=new Server(server,{
    cors:{
-    origin:"http://localhost:5173",
+    origin:"https://foodyy-nt8z.onrender.com",
     credentials:true,
     methods:['POST','GET']
 }
@@ -32,7 +32,7 @@ app.set("io",io)
 
 const port=process.env.PORT || 5000
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:"https://foodyy-nt8z.onrender.com",
     credentials:true
 }))
 app.use(express.json())
