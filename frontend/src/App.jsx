@@ -30,7 +30,7 @@ import DeliveryBoyProfile from './pages/DeliveryBoyProfile'
 import AdminPage from './pages/AdminPage'
 import { setSocket } from './redux/userSlice'
 
-export const serverUrl = "http://localhost:8000"
+export const serverUrl = "https://foodyy-backend.onrender.com"
 
 function App() {
   const { userData } = useSelector(state => state.user)
