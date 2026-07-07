@@ -340,11 +340,18 @@ The customer dashboard displays nearby restaurants, featured dishes, current loc
 ### Screenshots
 
 - Customer Dashboard
-- ![Uploading WhatsApp Image 2026-07-07 at 20.14.37.jpeg…]()
+- <img width="679" height="608" alt="WhatsApp Image 2026-07-07 at 20 14 37" src="https://github.com/user-attachments/assets/1313122c-9db8-4eb7-a9cd-91aacfe90995" />
+
+
 
 - Home Page
+- <img width="1365" height="635" alt="WhatsApp Image 2026-07-07 at 19 07 50" src="https://github.com/user-attachments/assets/19853cf9-d57c-40a4-8876-ef64ae2e23b7" />
+
 - Current Location
+- <img width="1133" height="104" alt="image" src="https://github.com/user-attachments/assets/762d383c-860b-480d-9b41-865a6650bbb9" />
+
 - Featured Restaurants
+<img width="1211" height="297" alt="image" src="https://github.com/user-attachments/assets/87861218-8a7b-409d-9d9e-38893f481bc9" />
 
 ---
 
@@ -355,7 +362,9 @@ Search restaurants and food items instantly.
 ### Screenshots
 
 - Search Bar
-- Search Results
+- <img width="1362" height="630" alt="WhatsApp Image 2026-07-07 at 19 09 25" src="https://github.com/user-attachments/assets/072f447e-4f36-4677-8283-274d04ee63db" />
+
+
 
 ---
 
@@ -366,8 +375,12 @@ Browse restaurant information, ratings and complete food menu.
 ### Screenshots
 
 - Restaurant Details
+- <img width="1360" height="628" alt="WhatsApp Image 2026-07-07 at 19 12 10" src="https://github.com/user-attachments/assets/e99ba5cc-8605-40b8-b0b1-71588f86b5ec" />
+
 - Restaurant Rating
-- Restaurant Information
+- <img width="657" height="410" alt="WhatsApp Image 2026-07-07 at 19 11 00" src="https://github.com/user-attachments/assets/d8511f78-0e11-4cfc-a6eb-51414fa8d5dd" />
+
+
 
 ---
 
@@ -378,8 +391,13 @@ Explore all available food items before placing an order.
 ### Screenshots
 
 - Food Menu
+- <img width="1274" height="418" alt="image" src="https://github.com/user-attachments/assets/232592e4-951a-4050-afba-02ba4308d824" />
+
 - Food Categories
+- <img width="1274" height="247" alt="image" src="https://github.com/user-attachments/assets/a83d9cc8-b449-477c-9a40-3bf0a2c19649" />
+
 - Food Details
+<img width="263" height="313" alt="image" src="https://github.com/user-attachments/assets/c91d0bf9-498e-4098-b1ea-ff1b821ef3dd" />
 
 ---
 
@@ -389,15 +407,23 @@ Manage selected food items before checkout.
 
 ### Features
 
-- Add Item
-- Remove Item
+- Add Item &  Remove Item
+- <img width="1184" height="600" alt="image" src="https://github.com/user-attachments/assets/5ed2f855-47cb-4bf6-a652-085351082ab9" />
+
+
 - Update Quantity
+- <img width="706" height="168" alt="image" src="https://github.com/user-attachments/assets/d589de3f-5035-43a6-b1dd-e1f633a7d677" />
+
 - Total Bill
+- <img width="383" height="389" alt="image" src="https://github.com/user-attachments/assets/8220f4fb-4e5f-4b65-939c-5e074c3fcece" />
+
 
 ### Screenshots
 
 - Cart Page
-- Cart Summary
+- <img width="845" height="630" alt="image" src="https://github.com/user-attachments/assets/bc57ea8f-ab15-4ed0-b28b-bcd48f3d20b4" />
+
+
 
 ---
 
@@ -408,9 +434,14 @@ Secure payment system with Cash on Delivery and Razorpay.
 ### Screenshots
 
 - Checkout Page
+- <img width="950" height="467" alt="image" src="https://github.com/user-attachments/assets/e7e53f54-ff06-4304-864d-71079d580bd6" />
+
 - Address Selection
-- Razorpay Payment
+<img width="913" height="426" alt="image" src="https://github.com/user-attachments/assets/7ac3e73e-c7b6-4b73-b1a3-efbc53997e96" />
+
 - Payment Success
+- <img width="480" height="264" alt="image" src="https://github.com/user-attachments/assets/14f51f32-f85c-48e7-9a88-fa9a4d77e155" />
+
 
 ---
 
@@ -421,8 +452,16 @@ Track every stage of your order in real time.
 ### Screenshots
 
 - Order Status
+- <img width="602" height="382" alt="image" src="https://github.com/user-attachments/assets/214254e8-4027-4e1f-a6a4-e0f319dd3349" />
+<img width="916" height="295" alt="image" src="https://github.com/user-attachments/assets/1a8efc68-67a4-474e-b2ee-a282a1faf196" />
+
 - Live Tracking
+-<img width="388" height="679" alt="WhatsApp Image 2026-07-07 at 19 06 25" src="https://github.com/user-attachments/assets/92c76da0-a8eb-4fce-a048-1cc60daf531d" />
+
+
 - Delivery Status
+- <img width="550" height="84" alt="image" src="https://github.com/user-attachments/assets/4cd33ba6-dae6-46f6-8558-68512cb121c6" />
+
 
 ---
 
@@ -433,6 +472,7 @@ View previously placed orders.
 ### Screenshots
 
 - Customer Order History
+<img width="1352" height="641" alt="WhatsApp Image 2026-07-07 at 19 08 14" src="https://github.com/user-attachments/assets/2610a018-94b7-44b1-a523-3a69c87177ad" />
 
 ---
 
@@ -447,6 +487,8 @@ Restaurant owners have complete control over restaurant management.
 ### Screenshots
 
 - Owner Dashboard
+<img width="886" height="601" alt="WhatsApp Image 2026-07-07 at 19 22 13" src="https://github.com/user-attachments/assets/ba978159-43f9-4798-a748-9d4ddd08f77c" />
+<img width="798" height="435" alt="WhatsApp Image 2026-07-07 at 19 22 38" src="https://github.com/user-attachments/assets/55ae58fc-c857-4d96-a87b-928c0bb37649" />
 
 ---
 
@@ -455,6 +497,7 @@ Restaurant owners have complete control over restaurant management.
 ### Screenshots
 
 - Create Restaurant
+<img width="594" height="429" alt="image" src="https://github.com/user-attachments/assets/d01cc77f-5392-44fd-a9e0-d3e80e96a825" />
 
 ---
 
@@ -478,9 +521,12 @@ Restaurant owners have complete control over restaurant management.
 
 ### Screenshots
 
-- Edit Food Item
-- Change Price
-- Update Food Images
+- Edit Food Item & Change Price &  Update Food Images
+- <img width="886" height="601" alt="WhatsApp Image 2026-07-07 at 19 22 13" src="https://github.com/user-attachments/assets/ef0c4b31-eb8b-4a46-a98e-e023ab940687" />
+-<img width="443" height="591" alt="image" src="https://github.com/user-attachments/assets/2c9f6005-7c8f-4839-a0b7-01c06fe23b39" />
+- <img width="798" height="435" alt="WhatsApp Image 2026-07-07 at 19 22 38" src="https://github.com/user-attachments/assets/9c0660ce-3482-4ff2-b8c9-f0b8780d840a" />
+
+
 
 ---
 
@@ -488,8 +534,10 @@ Restaurant owners have complete control over restaurant management.
 
 ### Screenshots
 
-- Incoming Orders
-- Processing Orders
+- Incoming Orders & Processing Orders
+- <img width="691" height="501" alt="image" src="https://github.com/user-attachments/assets/62f74efe-d043-4918-bd4d-c3fed2202df7" />
+
+
 
 ---
 
@@ -499,8 +547,10 @@ Assign available delivery partners to orders.
 
 ### Screenshots
 
-- Delivery Assignment
-- Available Delivery Partners
+- Delivery Assignment & Available Delivery Partners
+- <img width="707" height="187" alt="image" src="https://github.com/user-attachments/assets/005d20b4-e707-4c10-9de4-e1916f8786fa" />
+
+
 
 ---
 
@@ -509,6 +559,7 @@ Assign available delivery partners to orders.
 ### Screenshots
 
 - Owner Order History
+<img width="661" height="606" alt="image" src="https://github.com/user-attachments/assets/ced9f109-2123-4137-88c0-9d57354971c6" />
 
 ---
 
@@ -523,6 +574,9 @@ Dedicated dashboard for delivery partners.
 ### Screenshots
 
 - Delivery Dashboard
+<img width="1355" height="588" alt="WhatsApp Image 2026-07-07 at 19 24 31" src="https://github.com/user-attachments/assets/56071e87-969c-45f6-9294-70b5d2149ae2" />
+<img width="909" height="603" alt="WhatsApp Image 2026-07-07 at 19 24 09" src="https://github.com/user-attachments/assets/7ed9fc1b-5861-46fb-b00a-f4732214ca4b" />
+
 
 ---
 
@@ -541,7 +595,11 @@ Track delivery location in real time.
 ### Screenshots
 
 - Live Map
+- <img width="878" height="616" alt="image" src="https://github.com/user-attachments/assets/3416b9c4-d367-468a-a9ec-7c07d556ae35" />
+
 - Current Location
+- <img width="1365" height="623" alt="WhatsApp Image 2026-07-07 at 19 16 38" src="https://github.com/user-attachments/assets/d6c25418-72c9-402d-b059-862db53728b9" />
+
 
 ---
 
@@ -552,6 +610,7 @@ Track completed deliveries and total earnings.
 ### Screenshots
 
 - Earnings Dashboard
+<img width="387" height="302" alt="image" src="https://github.com/user-attachments/assets/1cf293de-a075-424a-8b48-3e81c2ea34dc" />
 
 ---
 
