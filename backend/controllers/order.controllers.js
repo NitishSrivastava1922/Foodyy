@@ -502,8 +502,7 @@ export const sendDeliveryOtp = async (req, res) => {
     try {
         const { orderId, shopOrderId } = req.body
         const order = await Order.findById(orderId).populate("user")
-        const order = await Order.findById(orderId).populate("user");
-
+       
 console.log("Order:", order);
 console.log("User:", order?.user);
 console.log("Email:", order?.user?.email);
