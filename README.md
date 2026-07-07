@@ -16,6 +16,7 @@ Build • Order • Deliver • Track — All in Real-Time
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-4.0-38BDF8?logo=tailwind-css)]()
 
 🌐 **Live Demo**
+(Allow third party cookie for this site.)
 
 https://foodyy-nt8z.onrender.com
 
