@@ -70,14 +70,22 @@ export const signIn=async (req,res) => {
 }
 
 export const signOut=async (req,res) => {
-   export const signOut=async (req,res) => {
-    try {
-        res.clearCookie("token")
-return res.status(200).json({message:"log out successfully"})
+   try {
+        res.clearCookie("token", {
+            httpOnly: true,
+            secure: true,
+            sameSite: "none",
+            path: "/",
+        });
+
+        return res.status(200).json({
+            message: "Logout successfully",
+        });
     } catch (error) {
-        return res.status(500).json(`sign out error ${error}`)
+        return res.status(500).json({
+            message: error.message,
+        });
     }
-}
 }
 
 export const sendOtp=async (req,res) => {
